@@ -1,0 +1,15 @@
+# nano /etc/hosts
+
+Now, add the following lines into it.
+
+127.0.0.1 index.docker.io
+
+we'll now gonna pull our Jenkins image using the following command.
+
+# docker pull registry.hub.docker.com/zaiste/jenkins
+
+ docker tag registry.hub.docker.com/zaiste/jenkins jenkins-image
+
+Tagging Jenkins Image
+
+docker run -d -p 49001:8080 -v $PWD/jenkins:/var/lib/jenkins -t jenkins-image
